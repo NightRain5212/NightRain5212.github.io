@@ -407,12 +407,12 @@ h6::before {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgba(73, 177, 245, 0.2);
+    background-color: rgba(8, 244, 244, 0.2);
     border-radius: 2em;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--theme-color);
+    background-color: var(#5ec1e0);
     background-image: -webkit-linear-gradient(45deg,
             rgba(255, 255, 255, 0.4) 25%,
             transparent 25%,
@@ -430,7 +430,7 @@ h6::before {
 
 ::-moz-selection {
     color: #fff;
-    background-color: var(--theme-color);
+    background-color: var(#5ec1e0);
 }
 
 /* 波浪css */
