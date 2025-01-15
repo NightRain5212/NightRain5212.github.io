@@ -1,0 +1,456 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>项目介绍The Starry Veil(2024期末大作业) | 夜雨阁</title><meta name="author" content="寂时夜雨"><meta name="copyright" content="寂时夜雨"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="This is an ECNU2024-pygame project">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目介绍The Starry Veil(2024期末大作业)">
+<meta property="og:url" content="https://nightrainlone.cc/2025/01/15/ECNU2024PYGAME/index.html">
+<meta property="og:site_name" content="夜雨阁">
+<meta property="og:description" content="This is an ECNU2024-pygame project">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg">
+<meta property="article:published_time" content="2025-01-15T03:49:29.711Z">
+<meta property="article:modified_time" content="2025-01-15T03:53:54.987Z">
+<meta property="article:author" content="寂时夜雨">
+<meta property="article:tag" content="study">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="pygame">
+<meta property="article:tag" content="project">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2024/10/20/u8eawSFqhc1lnzO.jpg"><link rel="canonical" href="https://nightrainlone.cc/2025/01/15/ECNU2024PYGAME/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '项目介绍The Starry Veil(2024期末大作业)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-01-15 11:53:54'
+}</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/readPercent.css"><script defer src="/js/custom.js"></script><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><link rel="stylesheet" href="/css/progress_bar.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://www.fomal.cc/static/css/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg" style="background-image: url(https://s2.loli.net/2024/12/22/C3Anb9JfvMFp8yu.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/NWEYfCrXdtAZGxI.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-home"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw icon-guidang"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang"></use></svg><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw icon-tags"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw icon-category"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-category"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lists02"></use></svg><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-music">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-movies">                   </use></svg><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw icon-liuyanban"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyanban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw icon-a-wangzhanlianjiehulianwang"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-a-wangzhanlianjiehulianwang"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw icon-favorite"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-favorite"></use></svg><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">夜雨阁</span></a><a class="nav-page-title" href="/"><span class="site-name">项目介绍The Starry Veil(2024期末大作业)</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><a class="faa-parent animated-hover"><svg class="faa-tada icon" style="height:25px;width:25px;fill:currentColor;position:relative;top:5px" aria-hidden="true"><use xlink:href="#icon-Search"></use></svg></a></span></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-home"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw icon-guidang"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang"></use></svg><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw icon-tags"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw icon-category"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-category"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lists02"></use></svg><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-music">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-movies">                   </use></svg><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw icon-liuyanban"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyanban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw icon-a-wangzhanlianjiehulianwang"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-a-wangzhanlianjiehulianwang"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw icon-favorite"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-favorite"></use></svg><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">项目介绍The Starry Veil(2024期末大作业)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-15T03:49:29.711Z" title="发表于 2025-01-15 11:49:29">2025-01-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-15T03:53:54.987Z" title="更新于 2025-01-15 11:53:54">2025-01-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/study/">study</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/study/project/">project</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>This is an ECNU2024-pygame project</h1>
+<h1>游戏名：The Starry Veil – 星辰之幕</h1>
+<h3 id="游戏风格">游戏风格</h3>
+<ul>
+<li>2D,横板，闯关，动作。</li>
+<li>完全基于pygame开发</li>
+</ul>
+<h2 id="如何运行">如何运行</h2>
+<ul>
+<li>直接运行main目录下的main.py即可</li>
+</ul>
+<h2 id="运行展示">运行展示</h2>
+<h3 id="开始">开始</h3>
+<div class="img-wrap"><div class="img-bg"><img class="img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2025/01/14/bSoZV8DUflGRNg7.png"></div></div>
+<h3 id="过场剧情">过场剧情</h3>
+<div class="img-wrap"><div class="img-bg"><img class="img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2025/01/14/doeDuZQzJwN8Glm.png"></div></div>
+<h3 id="Boss战">Boss战</h3>
+<div class="img-wrap"><div class="img-bg"><img class="img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2025/01/14/1TiDVpKYU9bdlkS.png"></div></div>
+<div class="img-wrap"><div class="img-bg"><img class="img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2025/01/14/3Jes9Cpi1TtWHKY.png"></div></div>
+<h3 id="地图编辑器">地图编辑器</h3>
+<div class="img-wrap"><div class="img-bg"><img class="img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2025/01/14/lSZ6rGosE7NHeQh.png"></div></div>
+<h3 id="存档功能">存档功能</h3>
+<div class="img-wrap"><div class="img-bg"><img class="img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2025/01/14/N59E1XYWZJGbuhk.png"></div></div>
+<h3 id="npc对话">npc对话</h3>
+<div class="img-wrap"><div class="img-bg"><img class="img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2025/01/14/OQDC64LZu7fwRN9.png"></div></div>
+<h1>项目介绍</h1>
+<h2 id="整体框架">整体框架</h2>
+<ul>
+<li>基于此项目的框架和实现，Python的面向对象编程也是露出了它的獠牙。</li>
+</ul>
+<h3 id="项目结构">项目结构</h3>
+<ul>
+<li>main:
+<ul>
+<li>lib(库函数)
+<ul>
+<li>menu
+<ul>
+<li><a target="_blank" rel="noopener" href="http://StartMenu.py">StartMenu.py</a></li>
+<li>…</li>
+</ul>
+</li>
+<li>monsters
+<ul>
+<li><a target="_blank" rel="noopener" href="http://dragon.py">dragon.py</a></li>
+<li>…</li>
+</ul>
+</li>
+<li>saves
+<ul>
+<li><a target="_blank" rel="noopener" href="http://saveManager.py">saveManager.py</a></li>
+<li>…</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="http://Player.py">Player.py</a></li>
+<li>…</li>
+</ul>
+</li>
+<li>mapseed(地图种子)
+<ul>
+<li>level1_seed.csv</li>
+<li>…</li>
+</ul>
+</li>
+<li>save(存档)
+<ul>
+<li>save1.json</li>
+<li>…</li>
+</ul>
+</li>
+<li>src(素材图片)</li>
+<li><a target="_blank" rel="noopener" href="http://main.py">main.py</a>(游戏执行主体)</li>
+<li><a target="_blank" rel="noopener" href="http://settings.py">settings.py</a>(参数设置)</li>
+</ul>
+</li>
+</ul>
+<h3 id="实现功能">实现功能</h3>
+<ul>
+<li>动作游戏最基本的功能：角色与怪物的交互，角色与地形的检测（也是最麻烦的部分）</li>
+<li>玩家：实现监听键盘移动，技能，监听鼠标攻击，hp/mp更新，碰撞检测等等。</li>
+<li>小怪：实现自动攻击机制，自动移动机制，跟随玩家移动，以及一些小怪攻击特效。</li>
+<li>游戏地图：是由一块块的tile搭建起来的，可以通过地图种子保存和加载</li>
+<li>地图编辑器：实现用来编辑关卡地图的功能，可以选用不同类型的tile，编辑每一块tile的位置，可以设置怪物出生点。</li>
+<li>帮助文档：便于玩家游玩</li>
+<li>剧情文档：便于查阅剧情</li>
+<li>等级系统：实现每过一关升一级，玩家数值随等级基于一定的倍率而提高，并且实时显示</li>
+<li>技能系统：实现了技能冷却，技能冷却状态实时更新，技能释放的反馈（技能效果）如：回血，耗蓝，造成伤害等</li>
+<li>关卡系统：设置了每个关卡的解锁状态，实现了过一关解锁一关的功能，实现判定游戏的失败（玩家死亡）和胜利（杀死全部小怪且获取碎片/杀死全部小怪）</li>
+<li>存档系统：实现了六个槽位的分别存储，在槽位显示存储日期的信息，存档记录了每个关卡的状态和每个关卡中的信息。</li>
+<li>菜单功能：实现了不同菜单之间的切换功能，以及选关菜单。</li>
+<li>npc：实现了两个npc，以及触碰时触发对话，解锁技能的功能。</li>
+<li>存档机制：角色死亡后无法再游玩本关（一个存档中，不影响其他存档）（即要求一命通关才可能通关本游戏），一关胜利后无法在游玩本关</li>
+<li>辅助功能：显示角色坐标的功能（可开关），显示矩形碰撞箱的功能（可开关）</li>
+</ul>
+<h2 id="制作过程中的困难（一些实现思路）">制作过程中的困难（一些实现思路）</h2>
+<ul>
+<li>
+<p>地图编辑器</p>
+</li>
+<li>
+<p>十分低级，并且只能应对没有角色移动的情况，实现简单”背景图移动</p>
+</li>
+<li>
+<p>细节:Screen对象左上角始终为（0，0）右下角始终为（WIDTH,H EIGTH ),所以当按下&lt;-&gt;健时，用scroll值记录，每次在横坐标为0-scroll位置开始画图（ 其实就是在x负半轴开始画，Screen原地踏步），在Screen范围之外的不显示，于是就有了背景图的“ 左 右移动”。</p>
+</li>
+<li>
+<p>tile相关:用编号记录，包括角色也会用编号记录。刷新每帧地图时会逐行比对编号然后贴图。地图编辑器中tile具体位置要计算相对位置保存在二维数组中（排除scroll）。关卡中每个tile都会被添加到pygame的Spritegroup中，好像是方便角色移动。</p>
+</li>
+<li>
+<p>菜单。一个菜单页面一个类，因为菜单往往要负责创建类，以及功能实现。主要，游戏中所有类不会被销毁，只创建一次，因此如果run函数中有,ispausing，isrunning等标志，需要在每次调用run函数时刷新，最好不要把这类变量设为self而是直接当做函数的局部变量。处理事件注意顺序。最后菜单相关代码需要简化，重复代码太多，会被打低分的。</p>
+</li>
+<li>
+<p>关卡。设置Sprite组（pg内置的）（障碍物，爆炸物，角色，敌人，boss，NPC，液体等），方便管理。处理事件注意顺序，角色相关一般滞后，画图应该优先。由于每个关卡的基本骨架都相同，为了不不断重复无意义的代码，采用继承的方式，定义关卡基类，再导出每一关的子类。画图统一在主循环里面画，杜绝角色update自行绘图.处理事件遵循流水线原则，主线尽量只有一条输入线。</p>
+</li>
+<li>
+<p>背景图</p>
+</li>
+<li>
+<p>camera:原理和地图编辑器差不多，只是拓展了xy轴，其topleft就是其世界坐标取负值，用于使用move函数直接计算相对位移</p>
+</li>
+<li>
+<p>由于缺乏超长背景图，所以游戏背景图采用拼贴或者反复放映的形式</p>
+</li>
+<li>
+<p>角色：</p>
+</li>
+<li>
+<p>加载动画通过连续帧的更新，达到视觉暂留的效果实现动画，要从一张包含每个帧的图片中切分出每个帧的图像，保存起来方便后面调用。通过一个字典存储状态名到动画帧列表的键值对，向左的动画由向右的动画翻转得到，每次开始游戏时先预处理读取状态帧字典，减少了后续游戏运行的性能开销。</p>
+</li>
+<li>
+<p>还需要响应键盘来达到移动效果，通过检测键盘按键按下更改角色矩形的移动参数，计算角色矩形的坐标增长量，再应用到矩形的坐标上。</p>
+</li>
+<li>
+<p>难点：碰撞检测，因为地形是一块块的tile搭起来的，而且pygame自带的检测碰撞的函数不包括检测方向的函数，因此需要手动实现水平和竖直两个方向的与地形的碰撞检测。我通过暂时不应用偏移量，而是先分别判断作用两个方向的偏移量后的矩形是否与地形碰撞，若碰撞则重新计算偏移量，水平方向直接变化量dx=0，竖直方向计算玩家矩形下部与地形矩形顶部之差，再应用，即可实现碰撞后不穿过障碍物的效果。</p>
+</li>
+<li>
+<p>存档：</p>
+</li>
+<li>
+<p>涉及到文件操作，通过查阅资料，可以将关卡状态用一个字典储存起来保存到json文件中以供读取。且有六个槽位分别存储，并且还要显示存档日期。于是通过设计一个字典，存储了存档日期，玩家信息（玩家属性），小怪信息，保存到save+num的格式化文件名中以便区分不同槽位，槽位每次显示日期时只要读取对应槽位的日期即可，读取存档时，分别对每一个关卡进行恢复。json文件打开不能为空.</p>
+</li>
+<li>
+<p>小怪如何跟随主角，增加，水平方向定位，和遇障碍起跳逻辑，小怪能有70%概率追上主角</p>
+</li>
+<li>
+<p>小怪素材的搜集和处理步骤<br>
+得到原始素材：网络搜集连帧的简单原始图片；<br>
+gif转为图片使用python的PIL进行帧分解；豆包帮助生成<br>
+然后主要使用PS进行原始素材处理，使用联系表进行图片拼接。运用不同素材给部分小怪皮肤加上符文效果。使用仿制图章工具，去掉了素材水印。抠图形成透明背景，用python库cv2逐像素去色加上PS的蒙版叠加。</p>
+</li>
+<li>
+<p>小怪和攻击效果的组织方式<br>
+原来是单独在类内设置blit，并且将攻击效果和正常状态全部放在一个类中，错综复杂，不易调试，产生诸多问题，也增加了代码量。之后查资料，将离体攻击效果单独都成立类，使攻击效果成为本体类的子类，逻辑变清晰，更好维护。</p>
+</li>
+<li>
+<p>小怪的死亡机制<br>
+小怪和攻击效果都各自有独立类，怎么销毁比较统一和普适比较纠结。尝试定义levels中的garbage_bin精灵组，小怪内自动检测生命值小于零情况，死亡时将本体类对象，攻击效果类对象，血条对象都投递到levels中的garbage_bin精灵组，统一销毁。</p>
+</li>
+</ul>
+<h1>写在最后</h1>
+<ul>
+<li>首先感谢参与制作项目的成员，没有这个团队是很难独立做出来的。</li>
+<li>其次实际上代码还有很多可以改进的地方，还可能有一些小bug（角色图片偏离矩形，有的时候地形检测碰撞卡地形等等，不过不影响正常游玩吧）</li>
+<li>最后这是一个宝贵的项目经验，作为一个小游戏，它的完成度还是挺高的。</li>
+<li>最后吐槽一句,就是pygame游戏引擎太底层了，如果还有第二次，希望使用更高级的游戏引擎</li>
+<li>希望为后续这门课程这个作业允许更多人数</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>项目介绍The Starry Veil(2024期末大作业)</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://nightrainlone.cc/2025/01/15/ECNU2024PYGAME/">https://nightrainlone.cc/2025/01/15/ECNU2024PYGAME/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>寂时夜雨</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2025-01-15</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2025-01-15</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/study/">study</a><a class="post-meta__tags" href="/tags/python/">python</a><a class="post-meta__tags" href="/tags/pygame/">pygame</a><a class="post-meta__tags" href="/tags/project/">project</a></div><div class="post-share"><div class="social-share" data-image="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="next-post pull-full" href="/2024/12/25/%E5%88%9D%E7%AA%A5CPU%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86-%E6%B1%87%E7%BC%96%E5%85%A5%E9%97%A8/" title="CPU汇编入门"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CPU汇编入门</div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a href="/2024/10/13/Decimal/" title="Decimal的简单使用"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-13</div><div class="title">Decimal的简单使用</div></div></a><a href="/2024/10/26/Topsis%E6%B3%95/" title="Topsis算法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-26</div><div class="title">Topsis算法</div></div></a><a href="/2024/10/25/Tuple/" title="Py:Tuple"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-25</div><div class="title">Py:Tuple</div></div></a><a href="/2024/10/25/List/" title="Py:List"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-25</div><div class="title">Py:List</div></div></a><a href="/2024/10/25/Iteration/" title="Py:Iteration"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-25</div><div class="title">Py:Iteration</div></div></a><a href="/2024/10/26/%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95/" title="AHP法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-26</div><div class="title">AHP法</div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="card-info-avatar"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/NWEYfCrXdtAZGxI.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg">💎</g-emoji><span>悄悄摸鱼中~</span></div></div></div><div class="author-info-name">寂时夜雨</div><div class="author-info-description">寂时夜雨の小破栈</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/NightRain5212"><i class="fab fa-github"></i><span>-&gt;前往寒舍...</span></a><div class="card-info-social-icons"><a class="social-icon faa-parent animated-hover" href="https://github.com/NightRain5212/" target="_blank" title="Github"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-github"></use></svg></a><a class="social-icon faa-parent animated-hover" href="mailto:498187073@qq.com" target="_blank" title="邮箱"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youjian"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><a class="faa-parent animated-hover"><svg class="faa-tada icon" style="height:25px;width:25px;fill:currentColor;position:relative;top:5px" aria-hidden="true"><use xlink:href="#icon-gonggao"></use></svg></a><span>公告栏</span></div><div class="announcement_content">欢迎各位！如有错误或不足请联系~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">This is an ECNU2024-pygame project</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">游戏名：The Starry Veil – 星辰之幕</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E9%A3%8E%E6%A0%BC"><span class="toc-text">游戏风格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C"><span class="toc-text">如何运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%B1%95%E7%A4%BA"><span class="toc-text">运行展示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-text">开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E5%9C%BA%E5%89%A7%E6%83%85"><span class="toc-text">过场剧情</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boss%E6%88%98"><span class="toc-text">Boss战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">地图编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E6%A1%A3%E5%8A%9F%E8%83%BD"><span class="toc-text">存档功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npc%E5%AF%B9%E8%AF%9D"><span class="toc-text">npc对话</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">项目介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6"><span class="toc-text">整体框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD"><span class="toc-text">实现功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%9B%B0%E9%9A%BE%EF%BC%88%E4%B8%80%E4%BA%9B%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF%EF%BC%89"><span class="toc-text">制作过程中的困难（一些实现思路）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">写在最后</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By 寂时夜雨</div><div class="footer_custom_text">生命充满劳碌，但依然要诗意地栖居，因为生活远比诗歌精彩。 ---海德格尔</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i><span id="percent">0<span>%</span></span></button><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (false){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer src="/js/light.js"></script><script defer src="/js/cursor.js"></script><script defer data-pjax src="/js/readPercent.js"></script><script async src="//at.alicdn.com/t/c/font_4709238_s0r8s25n4tl.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://nightrainlone.cc/categories/study/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📒 夜星斋 (34)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="https://nightrainlone.cc/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #39dcc3}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://s2.loli.net/2024/10/20/kjLF1NzASK8n9e2.jpg);"> <a class="categoryBar-list-link" href="categories/study/">study</a><span class="categoryBar-list-count">34</span><span class="categoryBar-list-descr">学习记录喵</span></li><li class="categoryBar-list-item" style="background:url(https://s2.loli.net/2024/10/20/wavX2F5yVLhEYeG.jpg);"> <a class="categoryBar-list-link" href="categories/study/project/">project</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">数学小总结</span></li><li class="categoryBar-list-item" style="background:url(https://s2.loli.net/2024/12/04/Y7ckB6CMzru1XAe.jpg);"> <a class="categoryBar-list-link" href="categories/study/Math/">Math</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr">Cs61bの学习笔记</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/study/CS61B/">CS61B</a><span class="categoryBar-list-count">13</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Hexo/">Hexo</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/study/c/">c++</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/study/python/">python</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/study/算法/">算法</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/20/记录与总结-Gitlet完结/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-20</span><a class="blog-slider__title" href="2024/11/20/记录与总结-Gitlet完结/" alt="">Gitlet完结小总结</a><div class="blog-slider__text">gitlet通关！</div><a class="blog-slider__button" href="2024/11/20/记录与总结-Gitlet完结/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/19/梦开始的地方-CS61b/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-19</span><a class="blog-slider__title" href="2024/11/19/梦开始的地方-CS61b/" alt="">梦开始的地方</a><div class="blog-slider__text">CS61b配置经验</div><a class="blog-slider__button" href="2024/11/19/梦开始的地方-CS61b/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/12/12/排序/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-12-12</span><a class="blog-slider__title" href="2024/12/12/排序/" alt="">排序算法小总结</a><div class="blog-slider__text">总结一下最近学的排序~</div><a class="blog-slider__button" href="2024/12/12/排序/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/22/WSL-Arch配置/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-22</span><a class="blog-slider__title" href="2024/11/22/WSL-Arch配置/" alt="">wsl-Archlinux</a><div class="blog-slider__text">wsl下的arch配置经历小总结</div><a class="blog-slider__button" href="2024/11/22/WSL-Arch配置/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/12/04/有趣的积分杂题/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/10/20/5nRamoOquBhftZF.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-12-04</span><a class="blog-slider__title" href="2024/12/04/有趣的积分杂题/" alt="">有趣的积分杂题~</a><div class="blog-slider__text">趣味性十足，知识性十足，</div><a class="blog-slider__button" href="2024/12/04/有趣的积分杂题/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__fadeInLeft');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '2');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__fadeInRight');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('pagination');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__fadeInUp');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body></html>
